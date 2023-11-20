@@ -25,8 +25,8 @@ body {
 /*MAIN CONTAINER*/
 .main-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 80vw;
+    grid-template-columns: repeat(3, minmax(auto, auto));
+    max-width: 800px;
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
@@ -113,12 +113,6 @@ body {
 }
 
 /*MOBILE SCREENS*/
-@media(max-width: 900px) {
-    .main-container {
-        width: 95vw;
-    }
-}
-
 @media(max-width: 600px) {
     .main-container {
         grid-template-columns: 1fr;
