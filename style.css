@@ -1,0 +1,127 @@
+/*GLOBAL VARIABLES*/
+:root {
+    --bright--orange: hsl(31, 77%, 52%);
+    --dark--cyan: hsl(184, 100%, 22%);
+    --very--dark--cyan: hsl(179, 100%, 13%);
+    --very--light--grey: hsl(0, 0%, 95%);
+    --transparent--white: hsla(0, 0%, 100%, 0.75);
+}
+
+/*CORE STYLES*/
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+    min-height: 100vh;
+    background-color: var(--very--light--grey);
+}
+
+/*MAIN CONTAINER*/
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80vw;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+/*CARDS*/
+.card {
+    padding: 3rem;
+    color: white;
+}
+
+.card h2 {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var (--very--light--grey);
+    font-size: 1.6rem;
+    font-family: 'Big Shoulders Display', sans-serif;
+}
+
+.card p {
+    color: var(--transparent--white);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.card-sedans {
+    background-color: var(--bright--orange);
+}
+
+.card-suvs {
+    background-color: var(--dark--cyan);
+}
+
+.card-luxury {
+    background-color: var(--very--dark--cyan);
+}
+
+/*BUTTONS*/
+.card-button {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 2rem;
+    /*finally found the solution of adding
+    border on hover without moving elements
+    around: just add a transparent same-size
+    border on idle state*/
+    border: 2px solid transparent;
+    background-color: var(--very--light--grey);
+    transition: 0.7s ease-in-out;
+}
+
+.card-button-sedans {
+    color: var(--bright--orange);
+}
+
+.card-button-suvs {
+    color: var(--dark--cyan);
+}
+
+.card-button-luxury {
+    color: var(--very--dark--cyan);
+}
+
+/*UTILITY CLASSES*/
+/*hover states for button*/
+.active-state:hover {
+    cursor: pointer;
+    color: var(--very--light--grey);
+    border: 2px solid var(--very--light--grey);
+}
+
+.card-button-sedans:hover {
+    background-color: var(--bright--orange);
+}
+
+.card-button-suvs:hover {
+    background-color: var(--dark--cyan);
+}
+
+.card-button-luxury:hover {
+    background-color: var(--very--dark--cyan);
+}
+
+/*MOBILE SCREENS*/
+@media(max-width: 900px) {
+    .main-container {
+        width: 95vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        width: 70vw;
+    }
+}
